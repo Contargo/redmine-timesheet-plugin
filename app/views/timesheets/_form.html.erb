@@ -1,0 +1,33 @@
+<%= form_for @timesheet, html: {id: 'timesheet-form'} do |f| %>
+    <div id="timesheet-form-with-buttons" class="hide-when-print">
+      <%= hidden_field_tag 'set_filter', '1' %>
+      <div id="timesheet-form-content">
+        <fieldset id="filters">
+          <legend><%= l(:label_filter_plural) %></legend>
+          <div>
+            <%= render :partial => 'queries/filters', :locals => {:query => @timesheet.query} %>
+          </div>
+        </fieldset>
+        <fieldset class="options">
+          <legend><%= l(:label_options) %></legend>
+          <div>
+            <table>
+              <tr>
+                <td class="field"><%= label_tag('group_by', l(:field_group_by)) %></td>
+                <td class="values">
+                  <%= select_tag('group_by', options_for_select(
+                      [[]] + @timesheet.query.groupable_columns.collect { |c| [c.caption, c.name.to_s] },
+                      @timesheet.query.group_by
+                  )) %>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </fieldset>
+      </div>
+      <p class="buttons">
+        <%= link_to_function l(:button_apply), '$("#timesheet-form").submit()', :class => 'icon icon-checked' %>
+        <%= link_to l(:button_clear), {:action => :destroy}, :method => :delete, :class => 'icon icon-reload' %>
+      </p>
+    </div>
+<% end %>
