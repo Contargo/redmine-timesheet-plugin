@@ -30,8 +30,8 @@ class TimesheetQuery < TimeEntryQuery
         .order(order_option)
         .joins(joins_for_order_statement(order_option.join(',')))
 
-    if group_by
-      scope = scope.joins(group_by.to_sym)
+    if group_by_column and [:activity, :project, :user, :issue].include?(group_by_column.try(:name))
+      scope = scope.joins(group_by_column.name)
     end
 
     scope
