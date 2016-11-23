@@ -3,11 +3,11 @@ require 'timesheet_plugin/permission_helper'
 
 Redmine::Plugin.register :timesheet do
   name 'Timesheet Plugin'
-  author 'Florian "hase" Krupicka'
+  author 'Contargo GmbH & Co. KG'
   description 'Show time log overviews across all projects'
   version '0.7.0'
-  url 'https://gitlab-contargo.synyx.de/infra/redmine'
-  author_url 'https://gitlab-contargo.synyx.de/u/fkrupicka'
+  url 'https://github.com/Contargo/redmine-timesheet-plugin'
+  author_url 'https://github.com/Contargo'
 
   extend TimesheetPlugin::PermissionHelper
   permission :see_project_timesheets, { }, :require => :member
