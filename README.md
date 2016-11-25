@@ -4,6 +4,9 @@ A plugin to show and filter timelogs across all projects in Redmine.
 
 It is inspired by the original [timesheet plugin](https://github.com/edavis10/redmine-timesheet-plugin), written by Eric Davis.
 
+## Redmine Compatible
+The plugin is compatible with Redmine 3.3.X 
+
 ## Features
 
 * Filtering timelogs by several criterias, using same mechanisms as known from issue filtering:
