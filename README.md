@@ -30,8 +30,12 @@ The plugin is compatible with Redmine 3.3.X
 
 ## Installation and Setup
 
-1. Clone this repository to your Redmine `plugins/` directory.
-2. Restart web server
+1.  Clone this repository to your Redmine as `plugins/timesheet`:
+
+    `$ git clone https://github.com/Contargo/redmine-timesheet-plugin plugins/timesheet`
+
+    The name is important, because of the way the Redmine plugin system works.
+2.  Restart web server
 
 ## License
 
